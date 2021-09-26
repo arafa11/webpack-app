@@ -13,6 +13,23 @@ module.exports = {
           "sass-loader" // sass to css
         ],
       },
+      {
+        test: /\.html$/i,
+        // loader: "html-loader",
+        use: ["html-loader"]
+      },
+      {
+        test: /\.(svg|png|jpe?g|gif)$/i,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: "[name].[hash].[ext]",
+              outputPath: "imgs"
+            }
+          },
+        ],
+      },
     ],
   },
   plugins: [new HtmlWebpackPlugin({

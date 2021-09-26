@@ -5,7 +5,8 @@
   "private": true,
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --config webpack.dev.js --open",
+    "start": "webpack --config webpack.dev.js",
+    "start:dev": "webpack-dev-server --config webpack.dev.js --open",
     "build": "webpack --config webpack.prod.js"
   },
   "keywords": [],
@@ -18,7 +19,10 @@
     "webpack-cli": "^4.8.0"
   },
   "devDependencies": {
+    "clean-webpack-plugin": "^4.0.0",
     "css-loader": "^6.3.0",
+    "file-loader": "^6.2.0",
+    "html-loader": "^2.1.2",
     "html-webpack-plugin": "^5.3.2",
     "sass-loader": "^12.1.0",
     "style-loader": "^3.3.0",
