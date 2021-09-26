@@ -2,11 +2,22 @@ const path = require('path');
 
 module.exports = {
   mode: "development",
-  // devtool: "none",
+  // devtool: "none", // remove eval from output
   entry: "./src/index.js",
   output: {
     filename: "main.js",
     path: path.resolve(__dirname, 'dist'),
   },
-
+  module: {
+    rules: [
+      {
+        test: /\.(sa|sc|c)ss$/,
+        use: [
+          "style-loader", // inject styles to dom
+          "css-loader", // css to commonjs
+          "sass-loader" // sass to css
+        ],
+      },
+    ],
+  },
 }
