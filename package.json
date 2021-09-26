@@ -5,7 +5,8 @@
   "private": true,
   "main": "index.js",
   "scripts": {
-    "start": "webpack --config webpack.config.js"
+    "start": "webpack-dev-server --config webpack.dev.js --open",
+    "build": "webpack --config webpack.prod.js"
   },
   "keywords": [],
   "author": "",
@@ -20,6 +21,8 @@
     "css-loader": "^6.3.0",
     "html-webpack-plugin": "^5.3.2",
     "sass-loader": "^12.1.0",
-    "style-loader": "^3.3.0"
+    "style-loader": "^3.3.0",
+    "webpack-dev-server": "^4.3.0",
+    "webpack-merge": "^5.8.0"
   }
 }
