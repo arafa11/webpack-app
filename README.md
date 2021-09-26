@@ -9,5 +9,5 @@
 - dev and production
 - Html-loader, File-loader, Clean-webpack
 - Multiple Entrypoints & Vendor.js
-
+- Extact CSS & Minify HTML CSS JS
 

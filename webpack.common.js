@@ -1,5 +1,4 @@
 const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   entry: { 
@@ -9,34 +8,24 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.(sa|sc|c)ss$/,
-        use: [
-          "style-loader", // inject styles to dom
-          "css-loader", // css to commonjs
-          "sass-loader" // sass to css
-        ],
-      },
-      {
         test: /\.html$/i,
-        // loader: "html-loader",
-        use: ["html-loader"]
+        loader: "html-loader",
+        // use: ["html-loader"]
       },
-      {
-        test: /\.(svg|png|jpe?g|gif)$/i,
-        use: [
-          {
-            loader: 'file-loader',
-            options: {
-              name: "[name].[hash].[ext]",
-              outputPath: "imgs"
-            }
-          },
-        ],
-      },
+      // {
+      //   test: /\.(svg|png|jpe?g|gif)$/i,
+      //   use: [
+      //     {
+      //       loader: 'file-loader',
+      //       options: {
+      //         name: "[name].[hash].[ext]",
+      //         // name: "[path][name].[ext]",
+      //         outputPath: "imgs/"
+      //       }
+      //     },
+      //   ],
+      // },
     ],
   },
-  plugins: [new HtmlWebpackPlugin({
-    template: "./src/template.html",
-  })],
 }
 
